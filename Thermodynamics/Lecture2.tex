@@ -1,0 +1,226 @@
+\section{Relevant Mathematics}
+
+\subsection{Total differentials}
+$$
+	\mathrm{d}Z = \left(\frac{\partial z}{x}\right)_y \mathrm{d}x +
+	\left(\frac{\partial z}{\partial y}\right)_x \mathrm{d} y
+$$
+This lets us see what happens to the system when we make a small change to
+some variable(s). For large changes, it is best to add up small increments
+(i.e.\ integrate):
+$$
+	\Delta Q = \int C_p \cdot \mathrm{d}T
+$$
+In mathematics, partial derivatives are relatively straightforward. However,
+here, what about:
+$$
+	\left(\frac{\partial U}{\partial V}\right)_p?
+$$
+\paragraph{Example:} Find the above:
+$$
+	U = \frac{1}{2}mv^2 = \frac{3}{2}Nk_BT = \frac{3}{2}pV
+$$
+Now, if we differentiate:
+$$
+	\left(\frac{\partial U}{\partial V}\right)_T =
+	\frac{\partial}{\partial V}\left[\frac{3}{2}Nk_b T\right] = 0
+$$
+$$
+	\left(\frac{\partial U}{\partial V}\right)_p = 
+	\frac{\partial}{\partial V}\left[\frac{3}{2}pV\right] = \frac{3}{2}p
+$$
+It is important to remember which variable you are keeping constant in
+thermodynamics, or things can get out of hand quickly.
+
+\subsection{Some Relations}
+If we have that $x$, $y$ and $z$ are related by $f(x,y,z)$, then we also have
+that $x = x(y,z)$, $y = y(x,z)$.
+
+\subsubsection{Useful properties of 3D functions}
+There are two useful things to use:
+$$
+	\left(\frac{\partial x}{\partial y}\right)_z
+	\left(\frac{\partial y}{\partial x}\right)_z = 1
+$$
+$$
+	\left(\frac{\partial x}{\partial y}\right)_z
+	\left(\frac{\partial y}{\partial z}\right)_x
+	\left(\frac{\partial z}{\partial x}\right)_y = -1
+$$
+\begin{proof}
+	Begin with the original partial above:
+	$$
+		\mathrm{d}x = \left(\frac{\partial x}{\partial y}\right)_z \mathrm{d}y
+		+ \left(\frac{\partial x}{\partial z}\right)_y \mathrm{d}z
+	$$
+	We can also repeat it with a change of variables to $y$:
+	$$
+		\mathrm{d}y = \left(\frac{\partial y}{\partial x}\right)_z \mathrm{d}x
+		+ \left(\frac{\partial y}{\partial z}\right)_x \mathrm{d}z
+	$$
+	Substituting:
+	$$
+		\mathrm{d}x = \left(\frac{\partial x}{\partial y}\right)_z
+		\left[
+			\left(\frac{\partial y}{\partial x}\right)_z \mathrm{d}x +
+			\left(\frac{\partial y}{\partial z}\right)_x \mathrm{d}z
+		\right] + \left(\frac{\partial x}{\partial z}\right)_y \mathrm{d}z
+	$$
+	Which we can multiply out to:
+	$$
+		\mathrm{d}x = \left(\frac{\partial x}{\partial y}\right)_z
+		\left(\frac{\partial y}{\partial x}\right)_z \mathrm{d}x
+		+ 
+		\left[
+			\left(\frac{\partial x}{\partial y}\right)_z
+			\left(\frac{\partial y}{\partial z}\right)_x +
+			\left(\frac{\partial x}{\partial z}\right)_y
+		\right] \mathrm{d}z
+	$$
+	And comparing coefficients, we must see that the right $=0$ and the left
+	$=1$, giving:
+	$$
+	    \left(\frac{\partial x}{\partial y}\right)_z
+		\left(\frac{\partial y}{\partial x}\right)_z = 1
+	$$
+	$$
+		\left(\frac{\partial x}{\partial y}\right)_z
+		\left(\frac{\partial y}{\partial z}\right)_x
+		\left(\frac{\partial z}{\partial x}\right)_y = -1
+	$$
+\end{proof}
+
+\paragraph{Example:} Total differential of an ideal gas.
+
+If we consider 1 mole, we have:
+$$
+	pV = RT
+$$
+To differentiate:
+$$
+	\mathrm{d}V = \left(\frac{\partial V}{\partial T}\right)_p \mathrm{d} t +
+	\left(\frac{\partial V}{\partial p}\right)_T \mathrm{d}p
+$$
+We can now work out the compoenents, and substitute in:
+$$
+	\mathrm{d}V = \frac{RT}{p}\left[\frac{\mathrm{d}T}{T} - 
+	\frac{\mathrm{d}p}{p}\right]
+$$
+And finally:
+$$
+	\frac{\mathrm{d}V}{V} = \frac{\mathrm{d}T}{T} - \frac{\mathrm{d}p}{p}
+$$
+This tells us a small change in temperature or pressure leads to a small change
+in volume - which is what we would expect.
+
+\section{Exact and inexact differentials}
+With well behaved functions, the order of differentiation doesn't matter. These
+are called exact differentials.
+\paragraph{Exact differentials} include system properties, for example
+temperature or pressre.
+\paragraph{Inexact differentials} are things that aren't in the function of
+state, for example work - that are path dependent.
+
+\subsection{Changes in variables}
+We can say that an incremental volume change d$V$ gives a total volume change
+between states 1 and 2:
+$$
+	\int^2_1 = V_2 - V_1 = \Delta V
+$$
+This doesn't take into account anything that happens in the middle because it
+doesn't matter.
+
+However, things like work;
+$$
+	W_{1\rightarrow 2} = \int^2_1 \delta W \neq W_2 - W_1
+$$
+This is because the work done is the area under the $pV$ graph and as such
+depends on the path taken between two points.
+
+\section{Changes in notation}
+In the previous course, work in was negative and work out was positive. Here:
+\paragraph{WORK IN IS POSITIVE}
+\paragraph{WORK OUT IS NEGATIVE}
+
+\section{Work-energy}
+Work and energy are linked - work is equivalent to raising a weight (Joule).
+Energy contained in a system is its capacity to do work.
+
+Two things not in thermal equilibrium connected via an engine get work out.
+
+\section{First Law of Thermodynamics}
+Internal energy ($U$) is the sum of all of the internal degrees of freedom,
+which ties into the First Law.
+
+The work done by adiabatic paths is the same for all paths. Experiments show
+that when a system changes between states by differnet adiabatic paths, as
+measured by a change in the level of a weight, the work done is always the
+same.
+
+This law is based on empirical evidence and is a statement regarding the
+conservation of energy. Mathematically:
+$$
+	\mathrm{d}U = \delta Q + \delta W
+$$
+(here $\delta$ is used to signify a non-exact differential).
+
+\subsection{Heat Capacity}
+Heat capacties describe how heat changes the internal energy of a gas. We have
+that:
+$$
+	C_V = \left(\frac{\partial U}{\partial T}\right)_V
+$$
+$$
+	C_p - C_V = R
+$$
+\begin{proof}
+Begin with:
+$$
+	U = U(V,T)
+$$
+$$
+	\mathrm{d}U = \left(\frac{\partial U}{\partial V}\right)_T \mathrm{d}V +
+	\left(\frac{\partial U}{\partial T}\right)_V \mathrm{d}T
+$$
+And we find by using the ideal gas law:
+$$
+	\mathrm{d}U = \delta Q - p \delta V
+$$
+Eliminate $\mathrm{d}U$:
+$$
+	\delta Q = \left(\frac{\partial U}{\partial T}\right)_V \mathrm{d}T + 
+	\left[
+		\left(\frac{\partial U}{\partial V}\right)_T + p
+	\right] \mathrm{d}V
+$$
+Dividing through by d$T$ and realising at constant volume d$V = 0$:
+$$
+	\left(\frac{\partial Q}{\partial T}\right)_V = C_V \;(\mathrm{def})\; =
+	\left(\frac{\partial U}{\partial T}\right)_V
+$$
+We do a similar thing for $C_p$:
+$$
+	C_p = \left(\frac{\partial U}{\partial T}\right)_V + 
+	\left[
+		\left(\frac{\partial U}{\partial V}\right)_T + p
+	\right] \left(\frac{\partial V}{\partial T}\right)_p
+$$
+Rearranging, we find that:
+$$
+	C_p - C_V = \left[
+	\left(\frac{\partial U}{\partial V}\right)_T + p
+	\right] \left(\frac{\partial V}{\partial T}\right)_p
+$$
+And from the ideal gas law, we know that $U = U(T)$ and as such:
+$$
+	C_p - C_V = R
+$$
+\end{proof}
+
+Physical laws are reversible. Something is thermodynamically reversible if its
+direction can be changed by an infinitesimal change to a system property.
+\paragraph{Quasistatic} means that we have no shockwaves, not heat transfer
+etc. and this is the way that we study thermodynamics - in a `perfect'
+environment.
+
+In real processes energy will be converted to heat and dissapated.
