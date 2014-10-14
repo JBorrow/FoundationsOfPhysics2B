@@ -1,0 +1,47 @@
+\pargraph{Example: }Heat is taken in for an isothermal expansion.
+\begin{proof}
+Isothermal means that d$T=0$, and for an ideal gas $U = U(T)$. We have:
+$$
+	\mathrm{d}U = \delta Q + \delta W
+$$
+Because there is no temperature change:
+$$
+	\delta Q = - \delta W
+$$
+$$
+	\delta Q = p \delta V
+$$
+And from this we can find:
+$$
+	\Delta Q = \int_{V_1}^{V_2} p \mathrm{d}V = 
+$$
+$$
+	\int_{V_1}^{V_2} \frac{RT}{V}\cdot\mathrm{d}V = 
+	RT\ln\left(\frac{V_2}{V_1}\right)
+$$
+And as such, if $V_2 > V_1$ this implies $\Delta Q > 0$.
+\end{proof}
+
+\paragraph{Example: }$pV^\gamma$ is constant for an adiabatic process on an
+ideal gas.
+\begin{proof}
+Start with the 1$^{st}$ law:
+$$
+	\mathrm{d}U = \delta Q + \delta W
+$$
+On an adiabatic process, $\delta Q = 0$:
+$$
+	\mathrm{d}U = - p \mathrm{d}V
+$$
+We also have that for an ideal gas:
+$$
+	C_V = \left(\frac{\partial Q}{\partial T}\right)_V = 
+	\left(\frac{\partial U}{\partial T}\right)_V
+$$
+Substituting in:
+$$
+	\mathrm{d}T = -p \frac{\mathrm{d}V}{C_V}
+$$
+
+
+\end{proof}
